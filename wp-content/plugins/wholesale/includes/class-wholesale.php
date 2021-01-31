@@ -25,7 +25,7 @@
  * @since      1.0.0
  * @package    Wholesale
  * @subpackage Wholesale/includes
- * @author     Sabreen Shakeel <sabreenshakeel@cedcoss.com>
+ * author     Sabreen Shakeel <sabreenshakeel@cedcoss.com>
  */
 class Wholesale {
 
@@ -34,7 +34,7 @@ class Wholesale {
 	 * the plugin.
 	 *
 	 * @since    1.0.0
-	 * @access   protected
+	 * access   protected
 	 * @var      Wholesale_Loader    $loader    Maintains and registers all hooks for the plugin.
 	 */
 	protected $loader;
@@ -43,7 +43,7 @@ class Wholesale {
 	 * The unique identifier of this plugin.
 	 *
 	 * @since    1.0.0
-	 * @access   protected
+	 * access   protected
 	 * @var      string    $plugin_name    The string used to uniquely identify this plugin.
 	 */
 	protected $plugin_name;
@@ -52,7 +52,7 @@ class Wholesale {
 	 * The current version of the plugin.
 	 *
 	 * @since    1.0.0
-	 * @access   protected
+	 * access   protected
 	 * @var      string    $version    The current version of the plugin.
 	 */
 	protected $version;
@@ -95,7 +95,7 @@ class Wholesale {
 	 * with WordPress.
 	 *
 	 * @since    1.0.0
-	 * @access   private
+	 * access   private
 	 */
 	private function load_dependencies() {
 
@@ -133,7 +133,7 @@ class Wholesale {
 	 * with WordPress.
 	 *
 	 * @since    1.0.0
-	 * @access   private
+	 * access   private
 	 */
 	private function set_locale() {
 
@@ -148,7 +148,7 @@ class Wholesale {
 	 * of the plugin.
 	 *
 	 * @since    1.0.0
-	 * @access   private
+	 * access   private
 	 */
 	private function define_admin_hooks() {
 
@@ -157,6 +157,35 @@ class Wholesale {
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
 
+		$this->loader->add_filter( 'woocommerce_settings_tabs_array', $plugin_admin, 'add_settings_tab', 50 );
+		
+		$this->loader->add_action( 'woocommerce_update_options_settings_tab_demo', $plugin_admin, 'update_settings' );
+
+		$this->loader->add_filter( 'woocommerce_sections_settings_tab_demo', $plugin_admin, 'ced_add_setting_section' );
+
+		$this->loader->add_action( 'woocommerce_settings_settings_tab_demo', $plugin_admin, 'output');
+
+		$this->loader->add_action( 'woocommerce_settings_save_settings_tab_demo', $plugin_admin, 'save');
+
+		$this->loader->add_action( 'woocommerce_product_options_pricing', $plugin_admin, 'ced_display_wholesale_field');
+
+		$this->loader->add_action( 'woocommerce_variation_options_pricing', $plugin_admin, 'ced_variation_display_wholesale_field', 10, 3);
+
+		$this->loader->add_action( 'woocommerce_process_product_meta', $plugin_admin, 'woocommerce_product_custom_fields_save' );
+
+		$this->loader->add_action( 'woocommerce_save_product_variation', $plugin_admin, 'woocommerce_variation_custom_fields_save' , 10, 2);
+
+		$this->loader->add_action('manage_users_columns', $plugin_admin, 'add_custom_user_columns');
+
+		$this->loader->add_action('manage_users_custom_column', $plugin_admin, 'ced_custom_column_button', 10, 3);
+
+		$this->loader->add_action('profile_personal_options', $plugin_admin, 'ced_checkbox_add_user_backend');
+
+		$this->loader->add_action('init', $plugin_admin, 'ced_add_custom_role');
+
+		$this->loader->add_action( 'init', $plugin_admin, 'bbloomer_assign_custom_role' );
+
+		$this->loader->add_action( 'admin_notices', $plugin_admin, 'sample_admin_notice__error' );
 	}
 
 	/**
@@ -164,7 +193,7 @@ class Wholesale {
 	 * of the plugin.
 	 *
 	 * @since    1.0.0
-	 * @access   private
+	 * access   private
 	 */
 	private function define_public_hooks() {
 
@@ -172,6 +201,18 @@ class Wholesale {
 
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
+
+		$this->loader->add_action('woocommerce_register_form', $plugin_public, 'ced_checkbox_add_user_frontend');
+
+		$this->loader->add_action( 'woocommerce_created_customer', $plugin_public, 'save_checkbox_value_to_account_details', 10, 1 );
+
+		$this->loader->add_action('woocommerce_after_shop_loop_item', $plugin_public, 'ced_display_wholesale_price_simple_product');
+
+		$this->loader->add_action('woocommerce_single_product_summary', $plugin_public, 'ced_display_wholesale_price_simple_product_single_page');
+
+		$this->loader->add_filter('woocommerce_available_variation', $plugin_public, 'ced_display_wholesale_price_variation_product', 10, 3);
+		
+		$this->loader->add_filter('woocommerce_before_calculate_totals', $plugin_public, 'ced_add_to_cart');
 
 	}
 

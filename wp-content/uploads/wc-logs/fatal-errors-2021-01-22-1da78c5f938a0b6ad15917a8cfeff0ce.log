@@ -1,0 +1,48 @@
+2021-01-22T04:23:29+00:00 CRITICAL Uncaught Error: Call to undefined function kjl_count_user_posts_by_type_and_status() in /opt/lampp/htdocs/woo_wordpress/wp-content/plugins/wholesale/admin/class-wholesale-admin.php:464
+Stack trace:
+#0 /opt/lampp/htdocs/woo_wordpress/wp-includes/class-wp-hook.php(287): Wholesale_Admin->kjl_user_posts_count_column_content('', 'num_posts', 1)
+#1 /opt/lampp/htdocs/woo_wordpress/wp-includes/plugin.php(212): WP_Hook->apply_filters('', Array)
+#2 /opt/lampp/htdocs/woo_wordpress/wp-admin/includes/class-wp-users-list-table.php(582): apply_filters('manage_users_cu...', '', 'num_posts', 1)
+#3 /opt/lampp/htdocs/woo_wordpress/wp-admin/includes/class-wp-users-list-table.php(398): WP_Users_List_Table->single_row(Object(WP_User), '', '', '1')
+#4 /opt/lampp/htdocs/woo_wordpress/wp-admin/includes/class-wp-list-table.php(1351): WP_Users_List_Table->display_rows()
+#5 /opt/lampp/htdocs/woo_wordpress/wp-admin/includes/class-wp-list-table.php(1278): WP_List_Table->display_rows_or_placeholder()
+#6 /opt/lampp/htdocs/woo_wordpress/wp-a in /opt/lampp/htdocs/woo_wordpress/wp-content/plugins/wholesale/admin/class-wholesale-admin.php on line 464
+
+2021-01-22T04:42:13+00:00 CRITICAL Uncaught Error: Call to undefined function kjl_count_user_posts_by_type_and_status() in /opt/lampp/htdocs/woo_wordpress/wp-content/plugins/wholesale/admin/class-wholesale-admin.php:465
+Stack trace:
+#0 /opt/lampp/htdocs/woo_wordpress/wp-includes/class-wp-hook.php(287): Wholesale_Admin->kjl_user_posts_count_column_content('', 'num_posts', 1)
+#1 /opt/lampp/htdocs/woo_wordpress/wp-includes/plugin.php(212): WP_Hook->apply_filters('', Array)
+#2 /opt/lampp/htdocs/woo_wordpress/wp-admin/includes/class-wp-users-list-table.php(582): apply_filters('manage_users_cu...', '', 'num_posts', 1)
+#3 /opt/lampp/htdocs/woo_wordpress/wp-admin/includes/class-wp-users-list-table.php(398): WP_Users_List_Table->single_row(Object(WP_User), '', '', '1')
+#4 /opt/lampp/htdocs/woo_wordpress/wp-admin/includes/class-wp-list-table.php(1351): WP_Users_List_Table->display_rows()
+#5 /opt/lampp/htdocs/woo_wordpress/wp-admin/includes/class-wp-list-table.php(1278): WP_List_Table->display_rows_or_placeholder()
+#6 /opt/lampp/htdocs/woo_wordpress/wp-a in /opt/lampp/htdocs/woo_wordpress/wp-content/plugins/wholesale/admin/class-wholesale-admin.php on line 465
+
+2021-01-22T05:31:31+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_User as array in /opt/lampp/htdocs/woo_wordpress/wp-content/plugins/wholesale/admin/class-wholesale-admin.php:462
+Stack trace:
+#0 /opt/lampp/htdocs/woo_wordpress/wp-includes/class-wp-hook.php(287): Wholesale_Admin->ced_custom_column_button('', 'num_posts', 1)
+#1 /opt/lampp/htdocs/woo_wordpress/wp-includes/plugin.php(212): WP_Hook->apply_filters('', Array)
+#2 /opt/lampp/htdocs/woo_wordpress/wp-admin/includes/class-wp-users-list-table.php(582): apply_filters('manage_users_cu...', '', 'num_posts', 1)
+#3 /opt/lampp/htdocs/woo_wordpress/wp-admin/includes/class-wp-users-list-table.php(398): WP_Users_List_Table->single_row(Object(WP_User), '', '', '1')
+#4 /opt/lampp/htdocs/woo_wordpress/wp-admin/includes/class-wp-list-table.php(1351): WP_Users_List_Table->display_rows()
+#5 /opt/lampp/htdocs/woo_wordpress/wp-admin/includes/class-wp-list-table.php(1278): WP_List_Table->display_rows_or_placeholder()
+#6 /opt/lampp/htdocs/woo_wordpress/wp-admin/users.php(595): WP_List_Table->d in /opt/lampp/htdocs/woo_wordpress/wp-content/plugins/wholesale/admin/class-wholesale-admin.php on line 462
+
+2021-01-22T06:36:20+00:00 CRITICAL Uncaught ArgumentCountError: Too few arguments to function Wholesale_Admin::bbloomer_assign_custom_role(), 1 passed in /opt/lampp/htdocs/woo_wordpress/wp-includes/class-wp-hook.php on line 287 and exactly 3 expected in /opt/lampp/htdocs/woo_wordpress/wp-content/plugins/wholesale/admin/class-wholesale-admin.php:487
+Stack trace:
+#0 /opt/lampp/htdocs/woo_wordpress/wp-includes/class-wp-hook.php(287): Wholesale_Admin->bbloomer_assign_custom_role('top')
+#1 /opt/lampp/htdocs/woo_wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /opt/lampp/htdocs/woo_wordpress/wp-includes/plugin.php(484): WP_Hook->do_action(Array)
+#3 /opt/lampp/htdocs/woo_wordpress/wp-admin/includes/class-wp-users-list-table.php(312): do_action('restrict_manage...', 'top')
+#4 /opt/lampp/htdocs/woo_wordpress/wp-admin/includes/class-wp-list-table.php(1326): WP_Users_List_Table->extra_tablenav('top')
+#5 /opt/lampp/htdocs/woo_wordpress/wp-admin/includes/class-wp-list-table.php(1260): WP_List_Table->display_tablenav('top') in /opt/lampp/htdocs/woo_wordpress/wp-content/plugins/wholesale/admin/class-wholesale-admin.php on line 487
+
+2021-01-22T07:26:20+00:00 CRITICAL Uncaught ArgumentCountError: Too few arguments to function Wholesale_Admin::bbloomer_assign_custom_role(), 1 passed in /opt/lampp/htdocs/woo_wordpress/wp-includes/class-wp-hook.php on line 287 and exactly 2 expected in /opt/lampp/htdocs/woo_wordpress/wp-content/plugins/wholesale/admin/class-wholesale-admin.php:488
+Stack trace:
+#0 /opt/lampp/htdocs/woo_wordpress/wp-includes/class-wp-hook.php(287): Wholesale_Admin->bbloomer_assign_custom_role('top')
+#1 /opt/lampp/htdocs/woo_wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /opt/lampp/htdocs/woo_wordpress/wp-includes/plugin.php(484): WP_Hook->do_action(Array)
+#3 /opt/lampp/htdocs/woo_wordpress/wp-admin/includes/class-wp-users-list-table.php(312): do_action('restrict_manage...', 'top')
+#4 /opt/lampp/htdocs/woo_wordpress/wp-admin/includes/class-wp-list-table.php(1326): WP_Users_List_Table->extra_tablenav('top')
+#5 /opt/lampp/htdocs/woo_wordpress/wp-admin/includes/class-wp-list-table.php(1260): WP_List_Table->display_tablenav('top') in /opt/lampp/htdocs/woo_wordpress/wp-content/plugins/wholesale/admin/class-wholesale-admin.php on line 488
+

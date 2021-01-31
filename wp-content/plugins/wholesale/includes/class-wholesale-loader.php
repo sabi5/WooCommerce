@@ -19,7 +19,7 @@
  *
  * @package    Wholesale
  * @subpackage Wholesale/includes
- * @author     Sabreen Shakeel <sabreenshakeel@cedcoss.com>
+ * author     Sabreen Shakeel <sabreenshakeel@cedcoss.com>
  */
 class Wholesale_Loader {
 
@@ -27,7 +27,7 @@ class Wholesale_Loader {
 	 * The array of actions registered with WordPress.
 	 *
 	 * @since    1.0.0
-	 * @access   protected
+	 * access   protected
 	 * @var      array    $actions    The actions registered with WordPress to fire when the plugin loads.
 	 */
 	protected $actions;
@@ -36,7 +36,7 @@ class Wholesale_Loader {
 	 * The array of filters registered with WordPress.
 	 *
 	 * @since    1.0.0
-	 * @access   protected
+	 * access   protected
 	 * @var      array    $filters    The filters registered with WordPress to fire when the plugin loads.
 	 */
 	protected $filters;
@@ -86,7 +86,7 @@ class Wholesale_Loader {
 	 * collection.
 	 *
 	 * @since    1.0.0
-	 * @access   private
+	 * access   private
 	 * @param    array                $hooks            The collection of hooks that is being registered (that is, actions or filters).
 	 * @param    string               $hook             The name of the WordPress filter that is being registered.
 	 * @param    object               $component        A reference to the instance of the object on which the filter is defined.

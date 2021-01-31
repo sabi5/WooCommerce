@@ -22,9 +22,9 @@
  * @since      1.0.0
  * @package    Wholesale
  * @subpackage Wholesale/includes
- * @author     Sabreen Shakeel <sabreenshakeel@cedcoss.com>
+ * author     Sabreen Shakeel <sabreenshakeel@cedcoss.com>
  */
-class Wholesale_i18n {
+class Wholesale_I18n {
 
 
 	/**

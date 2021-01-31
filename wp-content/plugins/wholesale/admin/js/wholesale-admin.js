@@ -1,6 +1,19 @@
 (function( $ ) {
 	'use strict';
 
+	// var checkbox = document.getElementById('myplugin_inventory_1');
+	// alert(checkbox);
+	// var box = document.getElementById('woocommerce_prices_include_tax');
+	// checkbox.onclick = function() {
+	//   console.log(this);
+	//   if (this.checked) {
+	// 	box.style['display'] = 'block';
+	//   } else {
+	// 	box.style['display'] = 'none';
+	//   }
+	// };
+				
+	
 	/**
 	 * All of the code for your admin-facing JavaScript source
 	 * should reside in this file.
